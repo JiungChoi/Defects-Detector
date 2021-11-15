@@ -7,17 +7,15 @@ import sys
 import threading
 import numpy as np
 import os
-import shutil
 import webbrowser
 
 '''
 Darknet compilation required
 '''
-# import background as bg
-# import detector
-# import tracker
+import background as bg
+import detector
+import tracker
 import utils
-import settings
 
 class VideoMethod:
     def __init__(self, ui):
@@ -47,9 +45,9 @@ class VideoMethod:
         '''
         Darknet compilation required
         '''
-        # self.detector = detector.Detector()
-        # self.detector.initialize(cfg_path, weight_path, data_path)
-        # self.tracker = tracker.Tracker()
+        self.detector = detector.Detector()
+        self.detector.initialize(cfg_path, weight_path, data_path)
+        self.tracker = tracker.Tracker()
 
     def play_video(self):
         self.enable_pause = False
