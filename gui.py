@@ -114,7 +114,7 @@ class VideoMethod:
                     detection_infos, self.frame_count)
                 rst_frame = self.tracker.cvDrawBoxes(
                     self.tracker.track_infos, frame)
-                for i in len(self.tracker.track_infos):
+                for i in range(0,len(self.tracker.track_infos-1)):
                     if not self.tracker.track_infos[i].id in self.tracked_id:
                         self.tracked_id.append(self.tracker.track_infos[i].id)
                     # 새로운 tracking 대상이 들어오면 list에 추가, 지도에 추가 요청 코드 작성 필요
